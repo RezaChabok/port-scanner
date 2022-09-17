@@ -25,3 +25,4 @@ if ',' in targets:
 		scan(ip_addr.rstrip(' '), ports)
 
 else : scan(targets ,ports)
+# REZA CHABOK
