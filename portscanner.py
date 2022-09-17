@@ -11,7 +11,7 @@ def scan(target, ports):
 			sock.settimeout(3)
 			sock.connect((target, port))
 			print(termcolor.colored((f"[+] Port Opened {port} -> "), "cyan"), socket.getservbyport(port))
-		except TimeoutError as e :
+		except TimeoutError :
 			print("\n" + termcolor.colored((f"IP {target} is Not Available!!!"), "red"))
 			break
 		except : pass
