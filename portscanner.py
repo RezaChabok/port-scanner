@@ -1,6 +1,6 @@
 import socket
 import termcolor
-import ipaddress
+
 
 
 def scan(target, ports):
