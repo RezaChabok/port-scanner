@@ -25,4 +25,5 @@ if ',' in targets:
 		scan(ip_addr.rstrip(' '), ports)
 
 else : scan(targets ,ports)
+print("Thanks For Using <3")
 # REZA CHABOK
