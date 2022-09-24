@@ -2,11 +2,20 @@
 Using this program, you can specify the opened ports of a desired IP.
 # Requirments :
 run `pip install termcolor` in your terminal or cmd .
-# How to work:
-run this commands in your cmd or terminal one by one:
-`git clone https://github.com/RezaChabok/port-scanner.git`
-`cd port-scanner`
-`python portscanner.py` 
+### Download and Use
+
+```bash
+  # Download
+  $ git clone ttps://github.com/RezaChabok/port-scanner && cd port-scanner
+    
+  # Install libs and dependencies
+  $ pip install termcolor
+  
+  # Use
+  $ python portscanner.py
+```
+
+
  
 then enter the ips you want to scan splited with `,` then enter number of port and again press enter at the end see the results :D.
 
