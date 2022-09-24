@@ -1,9 +1,9 @@
 # port-scanner
 Using this program, you can specify the opened ports of a desired IP.
 # Requirments :
-run `pip install termcolor` in your terminal or cmd one by one.
+run `pip install termcolor` in your terminal or cmd .
 # How to work:
-run this commands in your cmd or terminal:
+run this commands in your cmd or terminal one by one:
 `git clone https://github.com/RezaChabok/port-scanner.git`
 `cd port-scanner`
 `python portscanner.py` 
