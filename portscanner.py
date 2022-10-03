@@ -70,7 +70,7 @@ while True:
 											count +=1
 										loc += 1
 									scan(ip_addr.split("/")[0][:loc]+'.'+str(k)+'.'+str(j)+'.'+str(i), ports)
-					else :print("IP is have a problem (just support ip/24 , ip/8")
+					else :print(f"IP {ip_addr.split("/")[0]} is have a problem (just support ip/24 , ip/8)")
 				else:scan(ip_addr.rstrip(' '), ports)
 			else:
 				print("IP {} is not Valid!".format(ip_addr.split(" ")).split("/")[0])
@@ -115,7 +115,7 @@ while True:
 											count +=1
 										loc += 1
 									scan(targets.split("/")[0][:loc]+'.'+str(k)+'.'+str(j)+'.'+str(i), ports)
-					else :print("IP is have a problem (just support ip/24 , ip/8")
+					else :print(f"IP {targets} is have a problem (just support ip/24 , ip/8)")
 				else:scan(targets.rstrip(' '), ports)
 	choose = input("Do you Want Try Again?!(y/n) > ")
 	if choose.lower() == 'n':
