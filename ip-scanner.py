@@ -56,7 +56,7 @@ while True:
 							elif ip_addr.split("/")[0][-2] == ".":
 								last = -1
 							else:
-								print(ip_addr," is have a problem !")
+								print(termcolor.colored(ip_addr," is have a problem !", "red"))
 								break
 							scan(ip_addr.split("/")[0][:last]+str(i), ports)
 					elif ip_addr.split("/")[1] == '16':
@@ -72,10 +72,10 @@ while True:
 									scan((ip_addr[:loc]+'.'+str(i)+'.'+str(j)+'.'+str(k)), ports)
 					else :
 						a = ip_addr.split("/")[0]
-						print(f"IP {a} is have a problem (just support ip/24 , ip/8)")
+						print(termcolor.colored("IP {a} is have a problem (just support ip/32 , ip/24 and ip/8)", "red"))
 				else:scan(ip_addr.rstrip(' '), ports)
 			else:
-				print("IP {} is not Valid!".format(ip_addr.split(" ")).split("/")[0])
+				print(termcolor.colored("IP is not Valid!", "red"))
 
 	else : 
 		if checker(targets.split("/")[0]):	
@@ -91,7 +91,7 @@ while True:
 							elif targets.split("/")[0][-2] == ".":
 								last = -1
 							else:
-								print(targets," is have a problem !")
+								print(termcolor.colored(targets," is have a problem !", "red"))
 								break
 							scan(targets.split("/")[0][:last]+str(i), ports)
 					elif targets.split("/")[1] == '16':
@@ -105,8 +105,9 @@ while True:
 							for j in range(1, 250):
 								for k in range(1, 250):
 									scan((targets[:loc]+'.'+str(i)+'.'+str(j)+'.'+str(k)), ports)
-					else :print(f"IP {targets} is have a problem (just support ip/24 , ip/8)")
+					else :print(termcolor.colored(f"IP {targets} is have a problem (just support ip/32 , ip/24 and ip/8)", "red"))
 				else:scan(targets.rstrip(' '), ports)
+		else : print(termcolor.colored("IP is not valid !!!", "red"))
 	choose = input("Do you Want Try Again?!(y/n) > ")
 	if choose.lower() == 'n':
 		break	
