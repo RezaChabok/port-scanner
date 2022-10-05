@@ -6,13 +6,13 @@ run `pip install termcolor` in your terminal or cmd .
 
 ```bash
   # Download
-  $ git clone https://github.com/RezaChabok/port-scanner && cd port-scanner
+  $ git clone https://github.com/RezaChabok/ip-scanner && cd ip-scanner
     
   # Install libs and dependencies
   $ pip install termcolor
   
   # Use
-  $ python portscanner.py
+  $ python ip-scanner.py
 ```
 
 
