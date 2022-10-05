@@ -78,7 +78,9 @@ while True:
 	else : 
 		if checker(targets.split("/")[0]):	
 				if '/' in targets:
-					if targets.split("/")[1] == '24':
+					if targets.split("/")[1] == '32':
+						scan(targets.split("/")[0], ports)
+					elif targets.split("/")[1] == '24':
 						for i in range(1, 250):
 							if targets.split("/")[0][-4] == ".":
 								last = -3
@@ -101,7 +103,7 @@ while True:
 							for j in range(1, 250):
 								for k in range(1, 250):
 									scan((targets[:loc]+'.'+str(i)+'.'+str(j)+'.'+str(k)), ports)
-					else :print(f"IP {targets} is have a problem (just support ip/24 , ip/8)")
+					else :print(f"IP {targets} is have a problem (just support ip/32 , ip/24 and ip/8)")
 				else:scan(targets.rstrip(' '), ports)
 	choose = input("Do you Want Try Again?!(y/n) > ")
 	if choose.lower() == 'n':
