@@ -24,7 +24,19 @@ def checker(ip):
 	except socket.error:
 		return False
 	return True
-	
+def finder(ip, flag):
+		count = 0
+		loc = 0
+		if flag == 8:
+			end = 1
+		else : end = 2
+		while True:
+			if count == end:
+ 				break
+			elif ip.split("/")[0][loc] == ".":
+				count +=1
+			loc += 1
+		return loc-1	
 while True:
 	targets = input(termcolor.colored(("[*] Enter Target To Scan(split them by ,): "), "blue"))
 	ports = int(input(termcolor.colored(("[*] Enter How Many Ports You Want To Scan: "), "blue")))
@@ -46,31 +58,19 @@ while True:
 								break
 							scan(ip_addr.split("/")[0][:last]+str(i), ports)
 					elif ip_addr.split("/")[1] == '16':
-						for j in range(1,250):	
-							for i in range(1, 250):
-								count = 0
-								loc = -1*len(ip_addr.split("/")[0])
-								while True:
-									if count == 2:
-										break
-									if ip_addr.split("/")[0][loc] == ".":
-										count +=1
-									loc += 1
-								scan(ip_addr.split("/")[0][:loc]+'.'+str(j)+'.'+str(i), ports)
+						loc = finder((ip_addr.split("/")[0]), 16)
+						for i in range(1,250):
+							for j in range(1, 250):
+								scan((ip_addr[:loc]+'.'+str(i)+'.'+str(j)), ports)
 					elif ip_addr.split("/")[1] == '8':
-						for k in range(1, 250):
+						loc = finder((ip_addr.split("/")[0]), 8)
+						for i in range(1, 250):
 							for j in range(1,250):	
-								for i in range(1, 250):
-									count = 0
-									loc = -1*len(ip_addr.split("/")[0])
-									while True:
-										if count == 3:
-											break
-										if ip_addr.split("/")[0][loc] == ".":
-											count +=1
-										loc += 1
-									scan(ip_addr.split("/")[0][:loc]+'.'+str(k)+'.'+str(j)+'.'+str(i), ports)
-					else :print(f"IP {ip_addr.split("/")[0]} is have a problem (just support ip/24 , ip/8)")
+								for k in range(1, 250):
+									scan((ip_addr[:loc]+'.'+str(i)+'.'+str(j)+'.'+str(k)), ports)
+					else :
+						a = ip_addr.split("/")[0]
+						print(f"IP {a} is have a problem (just support ip/24 , ip/8)")
 				else:scan(ip_addr.rstrip(' '), ports)
 			else:
 				print("IP {} is not Valid!".format(ip_addr.split(" ")).split("/")[0])
@@ -91,30 +91,16 @@ while True:
 								break
 							scan(targets.split("/")[0][:last]+str(i), ports)
 					elif targets.split("/")[1] == '16':
-						for j in range(1,250):	
-							for i in range(1, 250):
-								count = 0
-								loc = -1*len(targets.split("/")[0])
-								while True:
-									if count == 2:
-										break
-									if targets.split("/")[0][loc] == ".":
-										count +=1
-									loc += 1
-								scan(targets.split("/")[0][:loc]+'.'+str(j)+'.'+str(i), ports)
+						loc = finder((targets.split("/")[0]), 16)
+						for i in range(1,250):	
+							for j in range(1, 250):
+								scan((targets[:loc]+'.'+str(i)+'.'+str(j)), ports)
 					elif targets.split("/")[1] == '8':
-						for k in range(1, 250):
-							for j in range(1,250):	
-								for i in range(1, 250):
-									count = 0
-									loc = -1*len(targets.split("/")[0])
-									while True:
-										if count == 3:
-											break
-										if targets.split("/")[0][loc] == ".":
-											count +=1
-										loc += 1
-									scan(targets.split("/")[0][:loc]+'.'+str(k)+'.'+str(j)+'.'+str(i), ports)
+						loc = finder((targets.split("/")[0]), 8)
+						for i in range(1, 250):
+							for j in range(1, 250):
+								for k in range(1, 250):
+									scan((targets[:loc]+'.'+str(i)+'.'+str(j)+'.'+str(k)), ports)
 					else :print(f"IP {targets} is have a problem (just support ip/24 , ip/8)")
 				else:scan(targets.rstrip(' '), ports)
 	choose = input("Do you Want Try Again?!(y/n) > ")
