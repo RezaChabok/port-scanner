@@ -1,4 +1,4 @@
-# port-scanner
+# ip-scanner
 Using this program, you can specify the opened ports of a desired IP.
 # Requirments :
 run `pip install termcolor` in your terminal or cmd .
