@@ -17,8 +17,10 @@ def scan(target, ports):
 		except : pass
 def checker(ip):
 	for num in ip.split('.'):
-		if int(num) >= 250 :
-			return False
+		if len(num) > 1 :
+			if int(num) >= 250:
+				return False
+		else: return False
 	try:
 		socket.inet_aton(ip)
 	except socket.error:
