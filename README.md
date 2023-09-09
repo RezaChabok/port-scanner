@@ -20,4 +20,4 @@ run `pip install termcolor` in your terminal or cmd .
 then enter the ips you want to scan splited with `,` then enter number of port and again press enter at the end see the results :D.
 
 
-<img src="1.png" alt="1">
+<img src="image.png" alt="1">
