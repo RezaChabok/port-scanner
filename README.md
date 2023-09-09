@@ -1,4 +1,4 @@
-# ip-scanner
+# port-scanner
 Using this program, you can specify the opened ports of a desired IP.
 # Requirments :
 run `pip install termcolor` in your terminal or cmd .
@@ -6,13 +6,13 @@ run `pip install termcolor` in your terminal or cmd .
 
 ```bash
   # Download
-  $ git clone https://github.com/RezaChabok/ip-scanner && cd ip-scanner
+  $ git clone https://github.com/RezaChabok/port-scanner && cd port-scanner
     
   # Install libs and dependencies
   $ pip install termcolor
   
   # Use
-  $ python ip-scanner.py
+  $ python port-scanner.py
 ```
 
 
